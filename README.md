@@ -12,3 +12,5 @@ git clone git@github.com:ReDxDaGer/Flask-Project.git
 ```bash
 sh setupenv.sh
 ```
+
+``Now you are ready to get started with the project``
