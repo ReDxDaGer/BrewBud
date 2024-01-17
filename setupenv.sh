@@ -5,3 +5,4 @@ pip install Flask
 pip install pandas
 pip install matplotlib
 pip install seaborn
+touch user_data.csv
