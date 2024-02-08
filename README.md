@@ -10,7 +10,8 @@ git clone git@github.com:ReDxDaGer/Flask-Project.git
 **2. Setup the env and download all the requirements**
 
 ```bash
-sh setupenv.sh
+python -m venv env
+
 ```
 
 ``Now you are ready to get started with the project``
