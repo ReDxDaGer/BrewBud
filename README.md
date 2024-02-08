@@ -11,6 +11,9 @@ git clone git@github.com:ReDxDaGer/Flask-Project.git
 
 ```bash
 python -m venv env
+source env/bin/activate
+pip install pandas
+pip install flask
 
 ```
 
