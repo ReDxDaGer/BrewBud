@@ -29,7 +29,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-# Empty list that stores data from the UseN
+
 stored_data = []  
 csv_filename = 'user_data.csv'
 
