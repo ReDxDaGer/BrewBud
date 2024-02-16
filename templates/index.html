@@ -1,66 +1,61 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Input Form</title>
-</head>
-<body>
-    <form action="/process" method="post">
-        <label for="user_input">Enter something:</label>
-        <input type="text" id="user_input" name="user_input" required>
-        <button type="submit">Submit</button>
-    </form>
-</body>
-</html>
- -->
- <!DOCTYPE html>
- <html lang="en">
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Input Form</title>
-
-     <style>
-        html,body{
-            padding: 0;
+    <style>
+        /* Global Styles */
+        html, body {
+            height: 100%;
             margin: 0;
-            box-sizing: border-box;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1453614512568-c4024d13c247?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Background image path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
+
         .Main {
-            background-color: rgb(56, 56, 56);
-            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100%;
         }
 
         .container {
-            /* max-width: 700px; */
-            
-            margin: 0 auto;
             padding: 30px;
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.9);
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.6s ease;
+            max-width: 400px;
+            width: 100%;
         }
+
+        /* Form Styles */
         form label {
             display: block;
             margin-bottom: 8px;
             font-weight: bold;
         }
 
-        /* Style form inputs */
         form input {
-            width: 100%;
+            width: calc(100% - 16px);
             padding: 8px;
             margin-bottom: 16px;
             box-sizing: border-box;
             border: 1px solid #ccc;
             border-radius: 4px;
+            transition: border-color 0.3s ease;
         }
 
-        /* Style form button */
+        form input:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+
         form button {
             background-color: #4CAF50;
             color: white;
@@ -68,31 +63,55 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
         }
 
-        /* Hover effect for the button */
         form button:hover {
             background-color: #45a049;
         }
+
+        form button:active {
+            background-color: #4CAF50;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Media Queries for responsiveness */
+        @media screen and (max-width: 480px) {
+            .container {
+                max-width: 90%;
+            }
+        }
     </style>
- </head>
- <body>
-    <div class="Main">
-        <div class="container">
-            <form action="/process" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required><br>
-                
-                <label for="phone">Phone Number:</label>
-                <input type="text" id="phone" name="phone" required><br>
+</head>
+<body>
+<div class="Main">
+    <div class="container">
+        <form action="/process" method="post" id="myForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
             
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br>
-            
-                <button type="submit">Submit</button>
-            </form>
-        </div>
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" required><br>
+        
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+        
+            <button type="submit">Submit</button>
+        </form>
     </div>
+</div>
+
 </body>
-    </html>
- 
+</html>
