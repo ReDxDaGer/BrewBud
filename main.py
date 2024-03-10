@@ -1,5 +1,7 @@
 import pandas as pd
 from flask import Flask, render_template, request
+from datetime import datetime
+import json
 
 app = Flask(__name__)
 
@@ -18,13 +20,33 @@ stored_data = read_csv()
 def index():
     return render_template('index.html')
 
+@app.route('/offers', methods=["GET", "POST"])
+def offers_page():
+    with open('./data/offers.json') as f:
+        card_types = json.load(f)
+
+    with open('./data/additional_offers.json') as f:
+        additional_card_types = json.load(f)
+
+    card_types.extend(additional_card_types)
+
+    return render_template('offers.html', card_types=card_types)
+
+
+@app.route('/subscribe')
+def subscribe():
+    # Add any necessary logic here
+    return render_template('subscribe.html')
+
+
 @app.route('/process', methods=['POST'])
 def process():
     global stored_data
     user_data = {
         'Name': request.form['name'],
         'Phone Number': request.form['phone'],
-        'Email': request.form['email']
+        'Email': request.form['email'],
+        'Date': datetime.now().strftime('%Y-%m-%d')
     }
     stored_data.append(user_data)
 
