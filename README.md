@@ -1,4 +1,4 @@
-# Flask-Project
+# Coffee Shop Project 
 This project is only for learning purpose 
 # Getting started 
 
