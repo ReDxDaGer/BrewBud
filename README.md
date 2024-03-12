@@ -1,4 +1,4 @@
-# Coffee Shop Project 
+# BrewBud
 This project is only for learning purpose 
 # Getting started 
 
