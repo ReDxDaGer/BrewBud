@@ -1,5 +1,17 @@
 [
     {
+        "name": "Silver Membership",
+        "description": "Standard membership with basic benefits",
+        "benefits": [
+            "Access to member-only events",
+            "24/7 customer support",
+            "Discounts on selected products and services",
+            "Exclusive access to online resources"
+        ],
+        "price": 49.99,
+        "extra_description": "Upgrade to our Silver Membership for additional savings and benefits."
+    },
+    {
         "name": "Gold Membership",
         "description": "Premium membership with exclusive benefits",
         "benefits": [
@@ -10,17 +22,6 @@
         ],
         "price": 99.99,
         "extra_description": "Unlock even more exclusive perks with our Gold Membership."
-    },
-    {
-        "name": "Silver Membership",
-        "description": "Standard membership with basic benefits",
-        "benefits": [
-            "Access to member-only events",
-            "24/7 customer support",
-            "Discounts on selected products and services"
-        ],
-        "price": 49.99,
-        "extra_description": "Upgrade to our Silver Membership for additional savings and benefits."
     },
     {
         "name": "Platinum Membership",
