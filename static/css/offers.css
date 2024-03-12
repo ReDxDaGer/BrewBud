@@ -1,80 +1,139 @@
-/* offers.css */
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap);
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
 
 .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #5c3c2d;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.header p {
+    font-size: 18px;
+    color: #777;
+}
+
+.card-types {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
 .card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 30px);
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    margin-bottom: 30px;
+    overflow: hidden;
 }
 
 .card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+    text-align: center;
+    padding: 30px;
 }
 
 .card h2 {
     font-size: 24px;
-    margin-bottom: 10px;
+    font-weight: 600;
+    color: #5c3c2d;
+    margin-top: 0;
+    margin-bottom: 15px;
 }
 
 .card p {
     font-size: 16px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.6;
 }
 
 .benefits {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .benefits li {
     font-size: 14px;
+    color: #666;
+    padding-left: 20px;
+    position: relative;
+    list-style: none;
 }
 
-.card p.price {
-    font-weight: bold;
+.benefits li::before {
+    content: "\2022"; /* Bullet point */
+    color: #5c3c2d;
+    font-size: 12px;
+    position: absolute;
+    left: 0;
+    top: 5px;
 }
 
-.card form {
-    margin-top: 15px;
+.price {
+    font-weight: 600;
+    font-size: 20px;
+    color: #5c3c2d;
+    margin-top: 10px;
 }
 
-/* Styling for the subscribe button */
-.card form input[type="submit"] {
-    padding: 10px 20px;
-    background-color: #007bff;
+.subscribe-button {
+    padding: 12px 30px;
+    background-color: #5c3c2d;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
-.card form input[type="submit"]:hover {
-    background-color: #0056b3;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.subscribe-button:hover {
+    background-color: #4a3023;
 }
 
-/* Animation for the subscribe button */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
+@media screen and (max-width: 1024px) {
+    .card {
+        width: calc(50% - 30px);
     }
 }
 
-.card form input[type="submit"]:hover {
-    animation: pulse 0.5s infinite alternate;
+@media screen and (max-width: 768px) {
+    .card {
+        width: calc(50% - 30px);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .card {
+        width: calc(100% - 30px);
+    }
 }
