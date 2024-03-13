@@ -2,4 +2,3 @@ pandas
 flask 
 matplotlib
 seaborn
-
