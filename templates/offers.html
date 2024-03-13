@@ -5,26 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Offers</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/offers.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+
 </head>
 <body>
+    <nav class="navbar">
+      <h2>BrewBud</h2>
+      <!-- <input type="text" placeholder="Search" class="navbar-search" /> -->
+    </nav>
+    <button class="navbar-burger" onclick="toggleMenu()"></button>
+    <nav class="menu">
+      <a href="/" style="animation-delay: 0.1s">Home</a>
+      <a href="/" style="animation-delay: 0.3s">Services</a>
+      <a href="/" style="animation-delay: 0.4s">Products</a>
+      <a href="/" style="animation-delay: 0.2s">About</a>
+      <a href="/" style="animation-delay: 0.5s">Contact</a>
+    </nav>
+    <div class="space"></div>
     <div class="container">
-        <h1>Our Offers</h1>
+        <div class="header">
+            <h1>Explore Our Exclusive Offers</h1>
+            <p>Discover amazing deals tailored just for you</p>
+        </div>
         <div class="card-types">
             {% for card in card_types %}
             <div class="card">
-                <h2>{{ card.name }}</h2>
-                <p>{{ card.description }}</p>
-                <ul class="benefits">
-                    {% for benefit in card.benefits %}
-                    <li>{{ benefit }}</li>
-                    {% endfor %}
-                </ul>
-                <p>Price: ${{ card.price }}</p>
-                <form action="{{ url_for('subscribe') }}" method="post">
-                    <input type="hidden" name="card_name" value="{{ card.name }}">
-                    <input type="hidden" name="price" value="{{ card.price }}">
-                    <input type="submit" value="Subscribe now">
-                </form>
+                <div class="card-content">
+                    <h2>{{ card.name }}</h2>
+                    <p>{{ card.description }}</p>
+                    <ul class="benefits">
+                        {% for benefit in card.benefits %}
+                        <li>{{ benefit }}</li>
+                        {% endfor %}
+                    </ul>
+                    <p class="price">Price: ${{ card.price }}</p>
+                    <form action="{{ url_for('subscribe') }}" method="post">
+                        <input type="hidden" name="card_name" value="{{ card.name }}">
+                        <input type="hidden" name="price" value="{{ card.price }}">
+                        <input type="submit" value="Subscribe now" class="subscribe-button">
+                    </form>
+                </div>
             </div>
             {% endfor %}
         </div>

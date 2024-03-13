@@ -1,64 +1,14 @@
+{% extends 'navbar.html' %}
 <!DOCTYPE html>
 <html lang="en">
+    {% block content %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-        .container {
-            max-width: 600px;
-            margin: 100px auto;
-            padding: 40px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            margin-bottom: 20px;
-            font-size: 36px;
-            color: #333;
-        }
-        p {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 40px;
-        }
-        .error-code {
-            font-size: 48px;
-            color: #ff4444;
-            margin-bottom: 20px;
-            animation: pulse 1s infinite alternate;
-        }
-        @keyframes pulse {
-            from {
-                transform: scale(1);
-            }
-            to {
-                transform: scale(1.1);
-            }
-        }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .button:hover {
-            background-color: #0056b3;
-        }
-    </style>
-</head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/error.css') }}">
 <body>
+    
     <div class="container">
         <h1>Oops!</h1>
         <p>We encountered an error:</p>
@@ -66,5 +16,6 @@
         <p>{{ error_message }}</p>
         <a href="/" class="button">Go Back</a>
     </div>
+    {% endblock %}
 </body>
 </html>
