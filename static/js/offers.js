@@ -1,1 +1,3 @@
-console.log("Hello World")
+const toggleMenu = () => {
+    document.body.classList.toggle("open");
+  };
