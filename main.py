@@ -25,13 +25,7 @@ def offers_page():
     with open('./data/offers.json') as f:
         card_types = json.load(f)
 
-    with open('./data/additional_offers.json') as f:
-        additional_card_types = json.load(f)
-
-    card_types.extend(additional_card_types)
-
     return render_template('offers.html', card_types=card_types)
-
 
 @app.route('/subscribe')
 def subscribe():
@@ -70,4 +64,4 @@ def internal_server_error(error):
     return render_template('error.html', error_code=500, error_message="Internal Server Error"), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)

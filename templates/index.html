@@ -1,56 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Example Coffee Shop</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BrewBud</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <div class="overlay"></div>
-    <header>
-        <div class="logo">Example Coffee Shop</div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Offers</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="container">
-        <div class="content">
-            <h1>Welcome to Example Coffee Shop</h1>
-            <p>We bring you the finest coffee experience with our exclusive blends.</p>
-            <a href="{{ url_for('offers_page') }}" class="btn" id="show-offers">Discover Our Offers</a>
-            <div id="offers-section" class="offers-section">
-                <button id="close-offers">&times;</button>
-                <h2>Check Our Offers</h2>
-                <!-- Your offers content here -->
-            </div>
-        </div>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    const showOffersBtn = document.getElementById('show-offers');
-    const offersSection = document.getElementById('offers-section');
-    const closeOffersBtn = document.getElementById('close-offers');
-
-    showOffersBtn.addEventListener('click', function() {
-        offersSection.style.display = 'block';
-    });
-
-    closeOffersBtn.addEventListener('click', function() {
-        offersSection.style.display = 'none';
-    });
-});
-    </script>
+  <div class="navbar-container">
+    <nav class="navbar">
+      <h2>BrewBud</h2>
+      <!-- <input type="text" placeholder="Search" class="navbar-search" /> -->
+    </nav>
+    <button class="navbar-burger" onclick="toggleMenu()"></button>
+    <nav class="menu">
+      <a href="/" style="animation-delay: 0.1s">Home</a>
+      <a href="/" style="animation-delay: 0.3s">Services</a>
+      <a href="/" style="animation-delay: 0.4s">Products</a>
+      <a href="/" style="animation-delay: 0.2s">About</a>
+      <a href="/" style="animation-delay: 0.5s">Contact</a>
+    </nav>
+  </div>
+  
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 </body>
 </html>
-
-        
 
 <!-- <div class="Main">
     <div class="container">
