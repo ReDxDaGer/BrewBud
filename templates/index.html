@@ -5,23 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BrewBud</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-  <div class="navbar-container">
-    <nav class="navbar">
-      <h2>BrewBud</h2>
-      <!-- <input type="text" placeholder="Search" class="navbar-search" /> -->
-    </nav>
-    <button class="navbar-burger" onclick="toggleMenu()"></button>
-    <nav class="menu">
-      <a href="/" style="animation-delay: 0.1s">Home</a>
-      <a href="/" style="animation-delay: 0.3s">Services</a>
-      <a href="/" style="animation-delay: 0.4s">Products</a>
-      <a href="/" style="animation-delay: 0.2s">About</a>
-      <a href="/" style="animation-delay: 0.5s">Contact</a>
-    </nav>
+  <div class="navbar" id="myNavbar">
+    <a href="/" class="active">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+    <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()">
+      <i class="fa fa-bars"></i>
+    </a>
   </div>
   
     <script src="{{ url_for('static', filename='js/index.js') }}"></script>
